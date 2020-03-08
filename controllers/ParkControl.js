@@ -30,8 +30,8 @@ module.exports = {
 
     retrieve: (req, res) => {
         ParkModel.find()
-        .then(park => {
-            if (!park) res.json({ success: false, result: "No parks found"})
+        .then(result => {
+            if (!result) res.json({ success: false, result: "No parks found"})
 
             res.json({ sucess: true, result: result})
         })
@@ -42,8 +42,8 @@ module.exports = {
 
     delete: (req, res) => {
         ParkModel.remove({ _id: req.body._id})
-        .then(park => {
-            if (!park) res.json({ success: false, result: "No park with such ID was found" })
+        .then(result => {
+            if (!result) res.json({ success: false, result: "No park with such ID was found" })
             res.json({ success: true, result: result })
         })
         .catch(err => res.json({success: false, result: err}))

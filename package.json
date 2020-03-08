@@ -14,5 +14,13 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bellex0/mern_api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Bellex0/mern_api/issues"
+  },
+  "homepage": "https://github.com/Bellex0/mern_api#readme"
 }
