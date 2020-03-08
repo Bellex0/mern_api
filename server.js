@@ -16,6 +16,9 @@ app.use(express.json())
 
 //Routes
 app.post('/api/park/create', ParkControl.create)
+app.post('/api/park/update', ParkControl.update)
+app.get('/api/park/retrieve', ParkControl.retrieve)
+app.delete('/api/park/delete', ParkControl.delete)
 
 //Start Server
 app.listen(3000, ()=> console.log("Server started on 3000"))

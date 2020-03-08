@@ -17,18 +17,35 @@ module.exports = {
     },
 
     update: (req, res) => {
-    ParkModel.findById(req.body._id)
+    ParkModel.update({_id: req.body._id}, req.body)
     .then(park => {
         if (!park) res.json({ success: false, result: "No such park exists"})
-      park = req.body
-
-      park.save()
-      .then(result => {
-          res.json({ success: true, result: result})
-      })
+      
+        res.json(park)
+    })
       .catch(err => {
           res.json({ success: false, result: err})
       })
-    })
+    },
+
+    retrieve: (req, res) => {
+        ParkModel.find()
+        .then(result => {
+            if (!result) res.json({ success: false, result: "No parks found"})
+
+            res.json({ sucess: true, result: result})
+        })
+        .catch(err => {
+            res.json({ success: false, result: err})
+        })
+    },
+
+    delete: (req, res) => {
+        ParkModel.remove({ _id: req.body._id})
+        .then(result => {
+            if (!result) res.json({ success: false, result: "No park with such ID was found" })
+            res.json({ success: true, result: result })
+        })
+        .catch(err => res.json({success: false, result: err}))
     }
 }
