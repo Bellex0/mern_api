@@ -4,8 +4,7 @@
   "description": "rest api",
   "main": "server.js",
   "scripts": {
-    "start": 
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon server.js"
   },
   "author": "belle",
   "license": "ISC",
