@@ -30,8 +30,8 @@ module.exports = {
 
     retrieve: (req, res) => {
         ParkModel.find()
-        .then(result => {
-            if (!result) res.json({ success: false, result: "No parks found"})
+        .then(park => {
+            if (!park) res.json({ success: false, result: "No parks found"})
 
             res.json({ sucess: true, result: result})
         })
